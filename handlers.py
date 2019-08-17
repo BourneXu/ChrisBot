@@ -12,6 +12,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 class Handlers:
     @staticmethod
     def help(update, context):
+        logger.debug(update.message.chat_id)
         context.bot.send_message(
             chat_id=update.message.chat_id,
             text="""
@@ -23,6 +24,7 @@ class Handlers:
 
     @staticmethod
     def echo(update, context):
+        logger.debug(update.message.chat_id)
         context.bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
 
     @staticmethod
@@ -72,6 +74,7 @@ class Handlers:
             title = (newslist[i * 2 - 1]).text
             # hackernews.append((link, title))
             newsletter += "{}. [{}]({})\n".format(i, title, link)
+        logger.debug(update.message.chat_id)
         context.bot.send_message(
             chat_id=update.message.chat_id, text=newsletter, parse_mode=telegram.ParseMode.MARKDOWN
         )
@@ -89,6 +92,7 @@ class Handlers:
             link = dealhot[i - 1].a.get("href")
             title = dealhot[i - 1].text.strip()
             dealletter += "{}. [{}]({})\n".format(i, title, link)
+        logger.debug(update.message.chat_id)
         context.bot.send_message(
             chat_id=update.message.chat_id, text=dealletter, parse_mode=telegram.ParseMode.MARKDOWN
         )

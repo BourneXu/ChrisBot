@@ -16,6 +16,7 @@ class ChrisBot:
         config.read(configfile)
         self.updater = Updater(token=config["bot"]["token"], use_context=True)
         self.dispatcher = self.updater.dispatcher
+        logger.info("Init Bot")
 
     def Addservices(self):
         help_handler = CommandHandler("help", Handlers.help)
