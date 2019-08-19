@@ -4,6 +4,13 @@
 
 ## 信息需求
 
+### RSS 订阅
+
+- 目标：支持所有具有 RSS 规范的链接订阅，[维基](https://en.wikipedia.org/wiki/RSS)
+
+- 推荐 [rsshub](https://docs.rsshub.app/)：一个聚合了国内外多种  rss 数据源的网站
+- 如果是微信公众号，推荐[瓦斯阅读](https://qnmlgb.tech/)
+
 ### 购物类
 
 - 命令： `/shop`
